@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.inputBox {
+  position: relative;
+  width: 450px;
+}
+
+.inputBox h2 {
+  font-size: 30px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.inputBox #password {
+  position: relative;
+  width: 100%;
+  font-size: 24px;
+  height: 60px;
+  border: none;
+  padding: 0 20px;
+  margin: 15px 0 20px;
+  background: transparent;
+  outline: none;
+  letter-spacing: 4px;
+  border-radius: 8px;
+  color: black;
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(255, 255, 255, 1),
+    -4px -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.inputBox input::placeholder {
+  color: rgb(58, 56, 56);
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.inputBox #btn {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  background: black;
+  font-size: 24px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  transition: all 0.3s ease;
+}
+
+#btn {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.inputBox #btn:hover {
+  background: #dc21fd;
+  color: black;
+  transition: 0.4s ease-out;
+}
+
+.inputBox #btn:active {
+  background: #9c27b0;
+}
+
+.copy {
+  cursor: pointer;
+  position: absolute;
+  top: 64px;
+  right: 15px;
+  width: 32px;
+  opacity: 0.5;
+  transition: 0.1s;
+}
+
+.copy:hover {
+  opacity: 1;
+}
+
+.alertBox {
+  user-select: text;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  right: 50px;
+  height: calc(100vh - 100px);
+  width: calc(100% - 100px);
+  background: purple;
+  color: white;
+  text-align: center;
+  font-size: 64px;
+  border-radius: 15px 15px 50% 15px;
+  transform: translate(-100%, -100%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+
+.alertBox.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0);
+  border-radius: 15px;
+  background: #9c27b0;
+}
+/* My  modifications */
+
+/* 
+Note: I had to make some modifications to your CSS in order to adjust them to my contribution.
+*/
+
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxes {
+  cursor: pointer;
+}
+
+.password-display {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border: 1px solid #333;
+  height: 2rem;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: 0.5rem;
+}
+
+.char-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2.2rem;
+}
+
+#password {
+  word-break: break-all;
+}

@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/icon.png">
-    <title>First Generator Random Passwords</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="img/icon.png">
+  <script src="script/mainscript.js" defer></script>
+  <title>First Generator Random Passwords</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="inputBox">
-            <h2>Random Generator Passwords</h2>
-            <input type="text" placeholder="Create Password" readonly id="password">
-            <img onclick="copyPassword()" class="copy" src="img/copy.png" alt="img-copy">
-            <div onclick="getPassword()" id="btn">Generator Passwords</div>
+  <div class="container">
+    <div class="inputBox">
+      <h2>Random Password Generator</h2>
+      <!-- <input type="text" placeholder="Password" id="password-display"> -->
+      <h3 class="password-display" id="passwordDisplay">password</h3>
+
+      <img onclick="copyPassword()" class="copy" src="img/copy.png" alt="img-copy">
+
+      <!-- My Modifications -->
+      <form class="form">
+        <label for="charAmountnumber">Number of Characters</label>
+        <div class="char-amount-container">
+          <input type="range" min="8" max="50" value="10" id="charAmountRange">
+          <input class="number-input" type="number" min="8" max="50" value="10" id="charAmountNumber">
         </div>
-        <div class="alertBox">Please press Generate Password button!</div>
+
+        <label for="">Include Uppercase</label>
+        <input type="checkbox" id="include-uppercase" class="checkboxes">
+
+        <label for="">Include Numbers</label>
+        <input type="checkbox" id="include-numbers" class="checkboxes">
+
+        <label for="">Include Symbols</label>
+        <input type="checkbox" id="include-symbols" class="checkboxes">
+        <button id="btn">Generate Password</button>
+      </form>
+      <!-- <div onclick="getPassword()" id="btn">Generate Password</div> -->
     </div>
-    <script src="script/mainscript.js"></script>
+    <div class="alertBox">Please press Generate Password button!</div>
+  </div>
 </body>
+
 </html>
