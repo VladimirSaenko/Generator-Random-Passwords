@@ -27,7 +27,7 @@
   text-align: center;
 }
 
-.inputBox #password {
+.inputBox #passwordDisplay {
   position: relative;
   width: 100%;
   font-size: 24px;
@@ -46,13 +46,7 @@
     -4px -4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.inputBox input::placeholder {
-  color: rgb(58, 56, 56);
-  letter-spacing: 0px;
-  text-align: center;
-}
-
-.inputBox #btn {
+.btn {
   position: relative;
   cursor: pointer;
   color: white;
@@ -66,13 +60,7 @@
   transition: all 0.3s ease;
 }
 
-#btn {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-}
-
-.inputBox #btn:hover {
+.btn:hover {
   background: #dc21fd;
   color: black;
   transition: 0.4s ease-out;
@@ -164,8 +152,4 @@ Note: I had to make some modifications to your CSS in order to adjust them to my
 
 .number-input {
   width: 2.2rem;
-}
-
-#password {
-  word-break: break-all;
 }

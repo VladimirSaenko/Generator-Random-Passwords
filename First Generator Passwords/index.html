@@ -15,10 +15,13 @@
   <div class="container">
     <div class="inputBox">
       <h2>Random Password Generator</h2>
-      <!-- <input type="text" placeholder="Password" id="password-display"> -->
-      <h3 class="password-display" id="passwordDisplay">password</h3>
+      <!-- <input type="text" placeholder="Password" id="password-display" class="password-display"> -->
+      <div id="passwordDisplay" class="password-display">
+        Password
+      </div>
+      <img onclick="clickHandle()" class="copy" id="to-clipboard" src="img/copy.png" alt="img-copy">
 
-      <img onclick="copyPassword()" class="copy" src="img/copy.png" alt="img-copy">
+
 
       <!-- My Modifications -->
       <form class="form">
@@ -36,7 +39,7 @@
 
         <label for="">Include Symbols</label>
         <input type="checkbox" id="include-symbols" class="checkboxes">
-        <button id="btn">Generate Password</button>
+        <button class="btn">Generate Password</button>
       </form>
       <!-- <div onclick="getPassword()" id="btn">Generate Password</div> -->
     </div>
