@@ -1,6 +1,8 @@
 
 "use strict"
 
+  /* With this function we get the characters from ASCII Character Codes https://www.petefreitag.com/cheatsheets/ascii-codes/ instead of manually creating an array */
+
 /* Selectors */
 const d = document;
 const $charAmountRange = d.getElementById("charAmountRange")
@@ -10,7 +12,10 @@ $includeNumbers =d.getElementById("include-numbers"),
 $includeSymbols = d.getElementById("include-symbols"),
 $form = d.querySelector(".form"),
 $passwordDisplay = d.getElementById('passwordDisplay'),
-$copy = d.getElementById("to-clipboard");
+$copy = d.getElementById("to-clipboard"),
+$alertBox = d.querySelector(".alertBox");
+
+//This dinamically generates the characters for the password to be generated
 
 const uppercaseCharCodes = arrayFromLowToHigh(65, 90)
 const lowercaseCharCodes = arrayFromLowToHigh(97, 122)
@@ -23,11 +28,7 @@ const symbolsCharCodes = arrayFromLowToHigh(33, 47).concat(
   arrayFromLowToHigh(123, 126)
 )
 
-let alertBox = d.querySelector('.alertBox');
-
-
-
-
+//Copies the password
   function copyToClipboard(str) {
     if(str != "password"){
       const elem = d.createElement('textarea');
@@ -36,21 +37,30 @@ let alertBox = d.querySelector('.alertBox');
       elem.select();
       d.execCommand("copy");
       d.body.removeChild(elem);
-    }
+    } 
   }
 
   function clickHandle(e) {
     copyToClipboard($passwordDisplay.innerText);
   }
-  
-  $copy.addEventListener('click', clickHandle())
-  
 
+//Adds and removes the alert box
+  function alertBox() {
+    if ($passwordDisplay.innerText === "Password") {
+      $alertBox.classList.add("active");
+      setTimeout(() => {
+        $alertBox.classList.remove("active");
+      }, 3000);
+    }
+  }
   
+  $copy.addEventListener('click', (e)=>{
+    clickHandle();
+    alertBox();
+  })
+  
+  //Generates the password
   /* This function syncs the range and the number input */
-  
-  
-  /* With this function we get the characters from ASCII Character Codes https://www.petefreitag.com/cheatsheets/ascii-codes/ instead of manually creating an array */
   
   $form.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -85,7 +95,7 @@ let alertBox = d.querySelector('.alertBox');
     return array
   }
   
-  
+  //Syncs the range and number inputs
   const syncCharAmount = (e)=> {
     const value = e.target.value
     $charAmountRange.value = value
@@ -94,4 +104,3 @@ let alertBox = d.querySelector('.alertBox');
   
   $charAmountRange.addEventListener("input", syncCharAmount);
   $charAmountNumber.addEventListener("input", syncCharAmount);
-console.log($passwordDisplay)

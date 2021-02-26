@@ -27,37 +27,98 @@
   text-align: center;
 }
 
-.inputBox #passwordDisplay {
+/* 
+Note: I had to make some modifications to your CSS in order to adjust them to my contribution.
+*/
+
+.password-display-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 100%;
-  font-size: 24px;
-  height: 60px;
+  width: 400px;
+  font-size: 1.4rem;
+  height: 4rem;
   border: none;
-  padding: 0 20px;
+  padding: 0 1.2rem;
   margin: 15px 0 20px;
   background: transparent;
   outline: none;
-  letter-spacing: 4px;
+  letter-spacing: 1px;
   border-radius: 8px;
   color: black;
+  word-break: break-all;
   box-shadow: -4px -4px 10px rgba(255, 255, 255, 1),
     inset 4px 4px 10px rgba(0, 0, 0, 0.5),
     inset -4px -4px 10px rgba(255, 255, 255, 1),
     -4px -4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn {
+#passwordDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  width: 400px;
+  font-size: 1.4rem;
+  height: 4rem;
+  border: none;
+  padding: 0 1.2rem;
+  margin: 15px 0 20px;
+  background: transparent;
+  outline: none;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  color: black;
+  word-break: break-all;
+  top: 3px;
+}
+
+.copy {
+  cursor: pointer;
+  position: absolute;
+  top: 64px;
+  right: 60px;
+  width: 32px;
+  opacity: 0.5;
+  transition: 0.1s;
+}
+
+.copy:hover {
+  opacity: 1;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.char-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.number-input {
+  width: 2.2rem;
+}
+
+.btn {
+  grid-column: span 2;
   cursor: pointer;
   color: white;
   background: black;
-  font-size: 24px;
-  display: block;
-  padding: 10px 15px;
+  font-size: 1.5rem;
+  padding: 15px 15px;
   border-radius: 8px;
   transition: 0.5s;
   letter-spacing: 4px;
   transition: all 0.3s ease;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .btn:hover {
@@ -70,86 +131,69 @@
   background: #9c27b0;
 }
 
-.copy {
-  cursor: pointer;
-  position: absolute;
-  top: 64px;
-  right: 15px;
-  width: 32px;
-  opacity: 0.5;
-  transition: 0.1s;
-}
-
-.copy:hover {
-  opacity: 1;
-}
-
 .alertBox {
-  user-select: text;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 50px;
-  right: 50px;
-  height: calc(100vh - 100px);
-  width: calc(100% - 100px);
-  background: purple;
-  color: white;
-  text-align: center;
-  font-size: 64px;
-  border-radius: 15px 15px 50% 15px;
-  transform: translate(-100%, -100%);
-  visibility: hidden;
-  opacity: 0;
-  transition: 1s;
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #9c27b0;
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 10px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  left: 50%; /* Center the snackbar */
+  top: 5px; /* 30px from the bottom */
 }
 
-.alertBox.active {
-  visibility: visible;
-  opacity: 1;
-  transform: translate(0, 0);
-  border-radius: 15px;
-  background: #9c27b0;
-}
-/* My  modifications */
-
-/* 
-Note: I had to make some modifications to your CSS in order to adjust them to my contribution.
-*/
-
-.form {
-  display: grid;
-  grid-template-columns: auto auto;
-  row-gap: 1rem;
-  column-gap: 2.5rem;
-  justify-content: center;
-  align-items: center;
+.active {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-.checkboxes {
-  cursor: pointer;
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 5px;
+    opacity: 1;
+  }
 }
 
-.password-display {
-  background-color: white;
-  color: black;
-  padding: 1rem;
-  border: 1px solid #333;
-  height: 2rem;
-  width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  word-break: break-all;
-  border-radius: 0.5rem;
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 5px;
+    opacity: 1;
+  }
 }
 
-.char-amount-container {
-  display: flex;
-  align-items: center;
+@-webkit-keyframes fadeout {
+  from {
+    top: 5px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
 
-.number-input {
-  width: 2.2rem;
+@keyframes fadeout {
+  from {
+    top: 5px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }

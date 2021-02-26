@@ -16,8 +16,10 @@
     <div class="inputBox">
       <h2>Random Password Generator</h2>
       <!-- <input type="text" placeholder="Password" id="password-display" class="password-display"> -->
-      <div id="passwordDisplay" class="password-display">
-        Password
+      <div class="password-display-wraper">
+        <div id="passwordDisplay" id="password-display">
+          Password
+        </div>
       </div>
       <img onclick="clickHandle()" class="copy" id="to-clipboard" src="img/copy.png" alt="img-copy">
 
@@ -31,19 +33,18 @@
           <input class="number-input" type="number" min="8" max="50" value="10" id="charAmountNumber">
         </div>
 
-        <label for="">Include Uppercase</label>
+        <label for="" class="options">Include Uppercase</label>
         <input type="checkbox" id="include-uppercase" class="checkboxes">
 
-        <label for="">Include Numbers</label>
+        <label for="" class="options">Include Numbers</label>
         <input type="checkbox" id="include-numbers" class="checkboxes">
 
-        <label for="">Include Symbols</label>
+        <label for="" class="options">Include Symbols</label>
         <input type="checkbox" id="include-symbols" class="checkboxes">
-        <button class="btn">Generate Password</button>
+        <button class="btn" type="submit">Generate Password</button>
       </form>
-      <!-- <div onclick="getPassword()" id="btn">Generate Password</div> -->
     </div>
-    <div class="alertBox">Please press Generate Password button!</div>
+    <div class="alertBox">Please generate the password first!</div>
   </div>
 </body>
 
