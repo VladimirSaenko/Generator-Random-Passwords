@@ -1,4 +1,4 @@
-# First-Generator-Passwords
+# First-Generator-Random-Passwords
  
 Генератор рандомных паролей
 
