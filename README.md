@@ -2,6 +2,6 @@
  
 ## Генератор рандомных паролей
 
-![4234](https://user-images.githubusercontent.com/56477695/118372019-fccf0380-b5b7-11eb-8a4f-670830ceb8d6.png)
+![img-portfolio](https://user-images.githubusercontent.com/56477695/150531000-5a51975f-ef18-4f60-b321-8e31a082ba79.png)
 
 ## Portfolio: https://vladimirsaenko.github.io/Portfolio-2/sites/site-30/First%20Generator%20Passwords/index.html
