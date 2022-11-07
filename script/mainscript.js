@@ -38,7 +38,7 @@ function getPassword() {
     
     document.getElementById('password').value = password;
     let randomNumber = Math.floor(Math.random() * smiles.length);
-    alertBox.innerHTML = "New Password Copied: <br>" + password + '<br><br>' + smiles[randomNumber];
+    alertBox.innerHTML = "<span>New Password Copied: <br> " + password + ' <br><br>' + smiles[randomNumber] + "<span/>";
 }
 
 function copyPassword() {
