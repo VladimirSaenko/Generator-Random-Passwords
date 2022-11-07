@@ -30,12 +30,10 @@ function getPassword() {
         ' ヅ ',
         ';)'
     ]
-
     for(let i = 0; i < passwordLength; i++){
         let randomNumber = Math.floor(Math.random() * chars.length);
         password += chars[randomNumber];
     }
-    
     document.getElementById('password').value = password;
     let randomNumber = Math.floor(Math.random() * smiles.length);
     alertBox.innerHTML = "<span>New Password Copied: <br> " + password + ' <br><br>' + smiles[randomNumber] + "<span/>";
