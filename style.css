@@ -89,6 +89,7 @@
     width: 32px;
     opacity: 0.5;
     transition: 0.1s;
+    user-select: none;
 }
 
 .copy:hover {
@@ -128,7 +129,6 @@
     .copy {
         top: 50%;
         right: 0;
-        user-select: none;
     }
 
     .alertBox {
