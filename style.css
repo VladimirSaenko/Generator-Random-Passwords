@@ -30,6 +30,7 @@
     color: black;
     font-weight: bolder;
     text-align: center;
+    user-select: none;
 }
 
 .inputBox input {
@@ -68,6 +69,7 @@
     border-radius: 8px;
     transition: 0.5s;
     letter-spacing: 4px;
+    user-select: none;
 }
 
 .inputBox #btn:hover {
@@ -126,6 +128,7 @@
     .copy {
         top: 50%;
         right: 0;
+        user-select: none;
     }
 
     .alertBox {
